@@ -1,4 +1,4 @@
-== Rakefile
+= Rakefile
 
 This is a KISS (Keep It Simple, Stupid) approach to Rakefiles for my Ruby
 projects. It may or may not be of use to you.
