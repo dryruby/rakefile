@@ -13,7 +13,7 @@ task :gemspec do
     gemspec.gsub!(/(gem\.date\s*=\s*')[^']+(')/, "\\1#{date}\\2")
 
     puts "Updating gemspec file list..."
-    files = FileList['[A-Z]*', '[A-Z]*.*', 'bin/*', 'doc/**/*', 'lib/**/*.rb', 'test/**/*', 'spec/**/*']
+    files = FileList['[A-Z]*', 'bin/*', 'doc/**/*', 'lib/**/*.rb', 'test/**/*', 'spec/**/*']
     gemspec.gsub!(/(gem\.files\s*=\s*%w\()[^\)]*(\))/, "\\1#{files.to_a.sort.join(' ')}\\2")
 
     puts "Updating gemspec test file list..."
