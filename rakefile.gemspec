@@ -17,7 +17,7 @@ GEMSPEC = Gem::Specification.new do |gem|
   gem.email              = 'arto.bendiken@gmail.com'
 
   gem.platform           = Gem::Platform::RUBY
-  gem.files              = %w(LICENSE README README.rdoc Rakefile VERSION lib/rakefile.rb lib/rakefile/gemspec.rb lib/rakefile/testunit.rb lib/rakefile/version.rb lib/rakefile/yard.rb)
+  gem.files              = %w(LICENSE README README.rdoc Rakefile VERSION lib/rakefile.rb lib/rakefile/gemspec.rb lib/rakefile/rubyforge.rb lib/rakefile/testunit.rb lib/rakefile/version.rb lib/rakefile/yard.rb)
   gem.files             -= %w(README.rdoc) # only for GitHub
   gem.bindir             = %q(bin)
   gem.executables        = %w()
@@ -30,5 +30,7 @@ GEMSPEC = Gem::Specification.new do |gem|
   gem.required_ruby_version  = '>= 1.8.2'
   gem.requirements           = []
   gem.add_runtime_dependency 'rake'
+  gem.add_runtime_dependency 'rubyforge'
+  gem.add_runtime_dependency 'yard'
   gem.post_install_message   = nil
 end
