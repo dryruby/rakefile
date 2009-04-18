@@ -15,9 +15,10 @@ Rakefile that consists of these two lines, and you're done:
 If you like this approach, but not necessarily the specific Rake tasks I've
 defined, the naming conventions I've used, or any other little thing, don't
 despair - wanting to do things my own way is exactly why I created this
-project, and there's no reason why you can't have your cake and eat it, too.
+project in the first place, and there's no reason why you can't have your
+cake and eat it, too.
 
-To use your own customizations, just fork the project on GitHub, and then
+To apply your own customizations, just fork the project on GitHub, and then
 add one single extra line to your Rakefile to explicitly specify the gem to
 be used; for example, this is how I would ensure my own Rakefile gem is
 loaded:
