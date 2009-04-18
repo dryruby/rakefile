@@ -31,4 +31,10 @@ else
 
     open(GEMSPEC_FILE, "wb") { |f| f.puts gemspec }
   end
+
+  require 'rake/gempackagetask'
+  package_task = Rake::GemPackageTask.new(GEMSPEC) do |pkg|
+    pkg.need_zip = true
+    pkg.need_tar = true
+  end
 end
