@@ -3,7 +3,7 @@
 
 GEMSPEC = Gem::Specification.new do |gem|
   gem.name               = 'rakefile'
-  gem.version            = '0.0.1'
+  gem.version            = '0.0.2'
   gem.date               = '2009-04-18'
   gem.homepage           = 'http://github.com/bendiken/rakefile'
   gem.license            = 'MIT' if gem.respond_to?(:license=)
