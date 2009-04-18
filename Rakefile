@@ -1,4 +1,4 @@
 #!/usr/bin/env ruby
-# http://github.com/bendiken/rakefile
+$:.unshift('lib')
 require 'rubygems'
-require 'rakefile'
+require 'rakefile' # http://github.com/bendiken/rakefile
