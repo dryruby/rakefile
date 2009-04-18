@@ -6,11 +6,11 @@ task :gemspec do
 
     puts "Updating gemspec version..."
     version = File.read('VERSION').chomp
-    gemspec.gsub!(/(gem\.version\s*=\s*')[^']+(')/, "\\1#{version}\\2")
+    gemspec.gsub!(/(gem\.version\s*=\s*')[^']*(')/, "\\1#{version}\\2")
 
     puts "Updating gemspec date..."
     date = File.mtime('VERSION').strftime('%Y-%m-%d')
-    gemspec.gsub!(/(gem\.date\s*=\s*')[^']+(')/, "\\1#{date}\\2")
+    gemspec.gsub!(/(gem\.date\s*=\s*')[^']*(')/, "\\1#{date}\\2")
 
     puts "Updating gemspec file list..."
     files = FileList['[A-Z]*', 'bin/*', 'doc/**/*', 'lib/**/*.rb', 'test/**/*', 'spec/**/*']
