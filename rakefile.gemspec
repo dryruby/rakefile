@@ -3,10 +3,10 @@
 
 GEMSPEC = Gem::Specification.new do |gem|
   gem.name               = 'rakefile'
-  gem.version            = '0.0.0.1'    # File.read('VERSION').chomp
-  gem.date               = '2009-04-18' # File.mtime('VERSION')
+  gem.version            = '0.0.0.2'
+  gem.date               = '2009-04-18'
   gem.homepage           = 'http://github.com/bendiken/rakefile'
-  gem.license            = 'MIT'
+  gem.license            = 'MIT' if gem.respond_to?(:license=)
   gem.summary            = 'A KISS (Keep It Simple, Stupid) approach to gem Rakefiles.'
   gem.description        = <<-EOF
     This is a KISS (Keep It Simple, Stupid) approach to Rakefiles for Ruby gems.
@@ -17,14 +17,13 @@ GEMSPEC = Gem::Specification.new do |gem|
   gem.email              = 'arto.bendiken@gmail.com'
 
   gem.platform           = Gem::Platform::RUBY
-  gem.files              = Dir.glob('{bin,doc,lib,test,spec}/**/*')
-  gem.files              << %w(LICENSE README VERSION Rakefile)
+  gem.files              = %w(LICENSE README Rakefile VERSION lib/rakefile.rb)
   gem.bindir             = 'bin'
   gem.executables        = []
   gem.default_executable = gem.executables.first
   gem.require_path       = 'lib'
   gem.extensions         = []
-  gem.test_files         = Dir.glob('{test,spec}/**/*')
+  gem.test_files         = []
   gem.has_rdoc           = false
 
   gem.required_ruby_version  = '>= 1.8.2'
