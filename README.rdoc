@@ -1,0 +1,59 @@
+== Rakefile
+
+This is a KISS (Keep It Simple, Stupid) approach to Rakefiles for my Ruby
+projects. It may or may not be of use to you.
+
+
+== Examples
+
+Using this in your own Ruby projects couldn't be simpler - just make a
+Rakefile that consists of these two lines, and you're done:
+
+  require 'rubygems'
+  require 'rakefile'
+
+If you like this approach, but not necessarily the specific Rake tasks I've
+defined, the naming conventions I've used, or any other little thing, don't
+despair - wanting to do things my own way is exactly why I created this
+project in the first place, and there's no reason why you can't have your
+cake and eat it, too.
+
+To apply your own customizations, just fork the project on GitHub, and then
+add one single extra line to your Rakefile to explicitly specify the gem to
+be used; for example, this is how I would ensure my own Rakefile gem is
+loaded:
+
+  require 'rubygems'
+  gem 'bendiken-rakefile'
+  require 'rakefile'
+
+
+== Download
+
+To get a local working copy of this repository, do:
+
+  % git clone git://github.com/bendiken/rakefile.git
+
+If you want to customize the functionality for your own requirements, fork
+the project on GitHub instead:
+
+* http://github.com/bendiken/rakefile
+
+
+== Installation
+
+To use this in your Ruby projects, first install the gem from GitHub as
+follows:
+
+  % [sudo] gem install bendiken-rakefile -s http://gems.github.com
+
+
+== Authors
+
+* Arto Bendiken (mailto:arto.bendiken@gmail.com) - http://ar.to
+
+
+== License
+
+All source code is available under the terms of the MIT license. For more
+information, see the accompanying LICENSE file.
