@@ -3,7 +3,7 @@
 
 GEMSPEC = Gem::Specification.new do |gem|
   gem.name               = 'rakefile'
-  gem.version            = '0.0.0.2'
+  gem.version            = '0.0.1'
   gem.date               = '2009-04-18'
   gem.homepage           = 'http://github.com/bendiken/rakefile'
   gem.license            = 'MIT' if gem.respond_to?(:license=)
@@ -17,13 +17,13 @@ GEMSPEC = Gem::Specification.new do |gem|
   gem.email              = 'arto.bendiken@gmail.com'
 
   gem.platform           = Gem::Platform::RUBY
-  gem.files              = %w(LICENSE README Rakefile VERSION lib/rakefile.rb)
-  gem.bindir             = 'bin'
-  gem.executables        = []
+  gem.files              = %w(LICENSE README Rakefile VERSION lib/rakefile.rb lib/rakefile/gemspec.rb lib/rakefile/testunit.rb lib/rakefile/version.rb lib/rakefile/yard.rb)
+  gem.bindir             = %q(bin)
+  gem.executables        = %w()
   gem.default_executable = gem.executables.first
-  gem.require_path       = 'lib'
-  gem.extensions         = []
-  gem.test_files         = []
+  gem.require_paths      = %w(lib)
+  gem.extensions         = %w()
+  gem.test_files         = %w()
   gem.has_rdoc           = false
 
   gem.required_ruby_version  = '>= 1.8.2'
