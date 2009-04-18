@@ -1,8 +1,16 @@
-desc "Updates the gemspec file"
-task :gemspec do
-  if gemspec_file = Dir.glob('*.gemspec').first
-    load gemspec_file
-    gemspec = File.read(gemspec_file)
+GEMSPEC_FILE = Dir.glob('*.gemspec').first
+
+unless GEMSPEC_FILE
+  desc "Creates the gemspec file"
+  task :gemspec do
+    # TODO
+  end
+else
+  load GEMSPEC_FILE
+
+  desc "Updates the gemspec file"
+  task :gemspec => GEMSPEC_FILE do
+    gemspec = File.read(GEMSPEC_FILE)
 
     puts "Updating gemspec version..."
     version = File.read('VERSION').chomp
@@ -14,12 +22,13 @@ task :gemspec do
 
     puts "Updating gemspec file list..."
     files = FileList['[A-Z]*', 'bin/*', 'doc/**/*', 'lib/**/*.rb', 'test/**/*', 'spec/**/*']
+    files -= FileList['doc/rdoc', 'doc/rdoc/**/*', 'doc/yard', 'doc/yard/**/*'] # FIXME: use doc/.gitignore
     gemspec.gsub!(/(gem\.files\s*=\s*%w\()[^\)]*(\))/, "\\1#{files.to_a.sort.join(' ')}\\2")
 
     puts "Updating gemspec test file list..."
     files = FileList['test/**/*', 'spec/**/*']
     gemspec.gsub!(/(gem\.test_files\s*=\s*%w\()[^\)]*(\))/, "\\1#{files.to_a.sort.join(' ')}\\2")
 
-    open(gemspec_file, "wb") { |f| f.puts gemspec }
+    open(GEMSPEC_FILE, "wb") { |f| f.puts gemspec }
   end
 end
