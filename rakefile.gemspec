@@ -3,8 +3,8 @@
 
 GEMSPEC = Gem::Specification.new do |gem|
   gem.name               = 'rakefile'
-  gem.version            = File.read('VERSION').chomp
-  gem.date               = File.mtime('VERSION')
+  gem.version            = '0.0.0.1'    # File.read('VERSION').chomp
+  gem.date               = '2009-04-18' # File.mtime('VERSION')
   gem.homepage           = 'http://github.com/bendiken/rakefile'
   gem.license            = 'MIT'
   gem.summary            = 'A KISS (Keep It Simple, Stupid) approach to gem Rakefiles.'
