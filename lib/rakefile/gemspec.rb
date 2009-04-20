@@ -21,7 +21,7 @@ else
     gemspec.gsub!(/(gem\.date\s*=\s*')[^']*(')/, "\\1#{date}\\2")
 
     puts "Updating gemspec file list..."
-    files = FileList['[A-Z]*', 'bin/*', 'doc/**/*', 'lib/**/*.rb', 'test/**/*', 'spec/**/*']
+    files = FileList['[A-Z]*', 'bin/*', 'doc/[A-Z]+', 'doc/examples/**/*.rb', 'lib/**/*.rb', 'test/**/*', 'spec/**/*']
     files -= FileList['doc/rdoc', 'doc/rdoc/**/*', 'doc/yard', 'doc/yard/**/*'] # FIXME: use doc/.gitignore
     gemspec.gsub!(/(gem\.files\s*=\s*%w\()[^\)]*(\))/, "\\1#{files.to_a.sort.join(' ')}\\2")
 
