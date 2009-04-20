@@ -4,7 +4,7 @@ if File.exists?(RUBYFORGE_CONFIG_FILE = File.expand_path('~/.rubyforge/config.ym
 
     namespace :rubyforge do
       desc "Publish the YARD documentation to RubyForge"
-      task :docs => :yardoc do
+      task :docs => 'doc/yard' do
         sh "rsync -avz doc/yard/ #{RUBYFORGE_CONFIG['username']}@rubyforge.org:/var/www/gforge-projects/#{RUBYFORGE_PROJECT}/"
       end
     end
