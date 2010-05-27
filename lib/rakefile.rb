@@ -1,6 +1,7 @@
 require 'rake'
 require 'rakefile/version'
 require 'rakefile/gemspec'
+require 'rakefile/package'
 require 'rakefile/testunit'
 require 'rakefile/yard'
 require 'rakefile/rubyforge'
