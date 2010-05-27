@@ -2,23 +2,23 @@
 # -*- encoding: utf-8 -*-
 
 GEMSPEC = Gem::Specification.new do |gem|
+  gem.version            = File.read('VERSION').chomp
+  gem.date               = File.mtime('VERSION').strftime('%Y-%m-%d')
+
   gem.name               = 'rakefile'
-  gem.version            = '0.0.2'
-  gem.date               = '2009-04-18'
   gem.homepage           = 'http://github.com/bendiken/rakefile'
-  gem.license            = 'MIT' if gem.respond_to?(:license=)
+  gem.license            = 'Public Domain' if gem.respond_to?(:license=)
   gem.summary            = 'A KISS (Keep It Simple, Stupid) approach to gem Rakefiles.'
   gem.description        = <<-EOF
     This is a KISS (Keep It Simple, Stupid) approach to Rakefiles for Ruby gems.
   EOF
-  gem.rubyforge_project  = nil
+  gem.rubyforge_project  = 'rakefile'
 
-  gem.author             = 'Arto Bendiken'
+  gem.authors            = ['Arto Bendiken']
   gem.email              = 'arto.bendiken@gmail.com'
 
   gem.platform           = Gem::Platform::RUBY
-  gem.files              = %w(LICENSE README README.rdoc Rakefile VERSION lib/rakefile.rb lib/rakefile/gemspec.rb lib/rakefile/rubyforge.rb lib/rakefile/testunit.rb lib/rakefile/version.rb lib/rakefile/yard.rb)
-  gem.files             -= %w(README.rdoc) # only for GitHub
+  gem.files              = %w(AUTHORS README UNLICENSE VERSION) + Dir.glob('lib/**/*.rb')
   gem.bindir             = %q(bin)
   gem.executables        = %w()
   gem.default_executable = gem.executables.first
@@ -27,10 +27,10 @@ GEMSPEC = Gem::Specification.new do |gem|
   gem.test_files         = %w()
   gem.has_rdoc           = false
 
-  gem.required_ruby_version  = '>= 1.8.2'
-  gem.requirements           = []
-  gem.add_runtime_dependency 'rake'
-  gem.add_runtime_dependency 'rubyforge'
-  gem.add_runtime_dependency 'yard'
-  gem.post_install_message   = nil
+  gem.required_ruby_version      = '>= 1.8.2'
+  gem.requirements               = []
+  gem.add_runtime_dependency    'rake'
+  gem.add_runtime_dependency    'rubyforge'
+  gem.add_runtime_dependency    'yard'
+  gem.post_install_message       = nil
 end
