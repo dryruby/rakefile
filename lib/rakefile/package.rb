@@ -6,4 +6,5 @@ task :package => ['VERSION', '.gemspec'] do
   sh "git archive --prefix=#{package}-#{version}/ --format=tar #{version} | gzip > pkg/#{package}-#{version}.tgz"
   sh "git archive --prefix=#{package}-#{version}/ --format=tar #{version} | bzip2 > pkg/#{package}-#{version}.tbz"
   sh "git archive --prefix=#{package}-#{version}/ --format=zip #{version} > pkg/#{package}-#{version}.zip"
-end                                                                               
+  sh "chmod a-w pkg/#{package}-#{version}.{tgz,tbz,zip}"
+end
